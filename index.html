@@ -343,7 +343,28 @@
             color: #ff4d4d;
             border: 1px solid rgba(231, 76, 60, 0.4);
         }
+.old-match {
+  display: none !important;
+}
 
+#seeMoreBtn {
+  background-color: #004d25;
+  color: #ffffff;
+  border: 2px solid #00ff88;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+}
+
+#seeMoreBtn:hover {
+  background-color: #00ff88;
+  color: #000000;
+}
+        
         /* ফুটার */
         footer {
             text-align: center;
@@ -915,7 +936,8 @@
                             </td>
                             <td><span class="win-badge">৪ উইকেটে জয়ী</span></td>
                         </tr>!-- গত ম্যাচের হিস্টরি ৪ -->
-                        <tr>
+                        <tr class="old-match">
+                            > 
                             <td>২১আগস্ট ২০২৬</td>
                             <td>মুনতাসির স্পোর্টিং ক্লাব</td>
                             <td>
@@ -933,7 +955,7 @@
                             <td><span class="win-badge">৮ উইকেটে জয়ী</span></td>
                         </tr>
                         -- গত ম্যাচের হিস্টরি ৫ -->
-                        <tr>
+                        <tr class="old-match">
                             <td>২ অক্টোবর ২০২৬</td>
                             <td>সিআইপিএল কাটিং একাদশ </td>
                             <td>
@@ -951,8 +973,8 @@
                             <td><span class="win-badge">১৬ রানে জয়ী</span></td>
                         </tr>
                         -- গত ম্যাচের হিস্টরি ৬ -->
-                        <tr>
-                            <td>১৬ অক্টোবর ২০২৬</td>
+                   <tr class="old-match">
+                       <td>১৬ অক্টোবর ২০২৬</td>
                             <td>মুনতাসির স্পোর্টিং ক্লাব</td>
                             <td>
                                 <div class="score-container">
@@ -972,7 +994,10 @@
                 </table>
             </div>
         </section>
-
+‍<div style="text-align: center; margin-top: 20px;">
+  <button id="seeMoreBtn" onclick="toggleOldMatches()">See More (আগের ম্যাচগুলো দেখুন)</button>
+</div>
+        
         <!-- গ্যালারি সেকশন -->
         <section id="gallery">
             <h2>ক্লাব গ্যালারি</h2>
@@ -1034,6 +1059,23 @@
             }
         }
     </script>
+    <script>
+  function toggleOldMatches() {
+    var oldMatches = document.querySelectorAll('.old-match');
+    var btn = document.getElementById('seeMoreBtn');
+
+    oldMatches.forEach(function(row) {
+      if (row.style.display === "table-row") {
+        row.style.display = "none";
+        btn.innerText = "See More (আগের ম্যাচগুলো দেখুন)";
+      } else {
+        row.style.display = "table-row"; 
+        btn.innerText = "Show Less (কম দেখুন)";
+      }
+    });
+  }
+    </script>
+    
 
 </body>
 </html>
