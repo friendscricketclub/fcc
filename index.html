@@ -882,7 +882,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- গত ম্যাচের হিস্টরি ১ -->
+                         <!-- ওপরের ম্যাচ ১ (প্রথমে লুকানো থাকবে - class="old-match") -->
                         <tr class="old-match">
                             <td>১৯ জুন, ২০২৬</td>
                             <td>রেডিয়েন্টস জিন্স লিমিটেড</td>
@@ -900,7 +900,7 @@
                             </td>
                             <td><span class="win-badge">৭৮ রানে জয়ী</span></td>
                         </tr>
-                        <!-- গত ম্যাচের হিস্টরি ২ -->
+                         <!-- ওপরের ম্যাচ ২ (প্রথমে লুকানো থাকবে - class="old-match") -->
                         <tr class="old-match">
                             <td>২৬ জুন, ২০২৬</td>
                             <td>হংকুন স্পোটিং ক্লাব</td>
@@ -918,7 +918,7 @@
                             </td>
                             <td><span class="win-badge">৩৫ রানে জয়ী</span></td>
                         </tr>
-                        <!-- গত ম্যাচের হিস্টরি ৩ -->
+                         <!-- ওপরের ম্যাচ ৩ (প্রথমে লুকানো থাকবে - class="old-match") -->
                         <tr class="old-match">
                             <td>০৩ জুলাই, ২০২৬</td>
                             <td>কিং সুপার স্টার</td>
@@ -935,7 +935,8 @@
                                 </div>
                             </td>
                             <td><span class="win-badge">৪ উইকেটে জয়ী</span></td>
-                        </tr><!-- গত ম্যাচের হিস্টরি ৪ -->
+                        </tr>
+                         <!-- নিচের ম্যাচ ১ (সবসময় দেখা যাবে) -->
                         <tr>
                             <td>২১আগস্ট ২০২৬</td>
                             <td>মুনতাসির স্পোর্টিং ক্লাব</td>
@@ -953,7 +954,7 @@
                             </td>
                             <td><span class="win-badge">৮ উইকেটে জয়ী</span></td>
                         </tr>
-                      <!  -- গত ম্যাচের হিস্টরি ৫ -->
+                       <!-- নিচের ম্যাচ ২ (সবসময় দেখা যাবে) -->
                         <tr>
                             <td>২ অক্টোবর ২০২৬</td>
                             <td>সিআইপিএল কাটিং একাদশ </td>
@@ -971,7 +972,7 @@
                             </td>
                             <td><span class="win-badge">১৬ রানে জয়ী</span></td>
                         </tr>
-                       <! -- গত ম্যাচের হিস্টরি ৬ -->
+                        <!-- নিচের ম্যাচ ৩ (সবসময় দেখা যাবে) -->
                    <tr>
                        <td>১৬ অক্টোবর ২০২৬</td>
                             <td>মুনতাসির স্পোর্টিং ক্লাব</td>
@@ -993,9 +994,10 @@
                 </table>
             </div>
         </section>
-‍<div style="text-align: center; margin-top: 20px;">
-  <button id="seeMoreBtn" onclick="toggleOldMatches()">See More (আগের ম্যাচগুলো দেখুন)</button>
-</div>
+‍  <!-- সি মোর বাটন -->
+        <div style="text-align: center; margin-top: 20px;">
+          <button id="seeMoreBtn" onclick="toggleOldMatches()">See More (আগের ম্যাচগুলো দেখুন)</button>
+        </div>‌
         
         <!-- গ্যালারি সেকশন -->
         <section id="gallery">
@@ -1057,22 +1059,21 @@
                 modal.style.display = "none";
             }
         }
-    </script>
-    <script>
-  function toggleOldMatches() {
-    var oldMatches = document.querySelectorAll('.old-match');
-    var btn = document.getElementById('seeMoreBtn');
+    // ওপরের ম্যাচগুলো দেখানো এবং লুকানোর লজিক
+        function toggleOldMatches() {
+            var oldMatches = document.querySelectorAll('.old-match');
+            var btn = document.getElementById('seeMoreBtn');
 
-    oldMatches.forEach(function(row) {
-      if (row.style.display === "table-row") {
-        row.style.display = "none";
-        btn.innerText = "See More (আগের ম্যাচগুলো দেখুন)";
-      } else {
-        row.style.display = "table-row"; 
-        btn.innerText = "Show Less (কম দেখুন)";
-      }
-    });
-  }
+            oldMatches.forEach(function(row) {
+                if (row.style.display === "table-row") {
+                    row.style.display = "none";
+                    btn.innerText = "See More (আগের ম্যাচগুলো দেখুন)";
+                } else {
+                    row.style.display = "table-row"; 
+                    btn.innerText = "Show Less (কম দেখুন)";
+                }
+            });
+        }
     </script>
     
 
